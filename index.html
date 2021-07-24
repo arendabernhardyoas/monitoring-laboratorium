@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<title>Monitoring Building - Laboratorium</title>
+
+<head>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/addons/datatables.min.css">
+  
+<script src="js/jquery-3.5.1.js" content="text/javascript"></script>
+<script src="js/data_labs.js" content="text/javascript"></script>
+<script src="js/rtc_js.js" content="text/javascript"></script>
+<script src="js/datetimepicker.js" content="text/javascript"></script>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="./js/addons/datatables.min.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table2').DataTable({
+            "scrollY": "400px", "scrollCollapse":false, "searching":false,
+            "paging":false, "ordering":false, "info":false, "ajax":loadData3()
+            });
+            $('.dataTables_length').addClass('bs-select');
+            $('#table1').DataTable({
+            "scrollY": "400px", "scrollCollapse":false, "searching":false,
+            "paging":false, "ordering":false, "info":false, "ajax":loadData1()
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
+  </script>
+
+</head>
+
+<body onload="loadData3();loadData2();loadData1();startTime()" class="blue accent-1">
+      <h2 class="font-weight-bold text-center dark-grey-text">Monitoring Building - Laboratorium</h2>
+      <div id="data_labs_micro0" class="container-fluid my-5">
+      <h5 class="text-center font-weight-bold mb-4">Real-time Monitoring</h5>
+      <div class="row">
+      <div class="col-md-6 col-lg-3 mb-4">
+      <div id="data_labs_micro1" class="card light-blue lighten-1 text-center white-text"></div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+      <div id="data_labs_micro2" class="card light-blue lighten-1 text-center white-text"></div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+      <div id="data_labs_micro3" class="card light-blue lighten-1 text-center white-text"></div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+      <div id="data_labs_micro4" class="card light-blue lighten-1 text-center white-text"></div>
+      </div>
+      </div>
+      </div>
+      <div class="my-5 mx-3">
+      <h5 class="text-center font-weight-bold mb-4">Today Report</h5>
+      <table id="table1" class="table table-bordered table-striped mb-0" cellspacing="0" width="100%">
+      <thead>
+      <tr>
+      <th>Date</th>
+      <th>Time</th>	 
+      <th>Name</th>
+      <th>IP Address</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Status</th>
+      </tr>
+      </thead>
+      <tbody id="data_labs1"></tbody>
+      </table>
+      </div>
+      <div class="my-5 mx-3">
+      <h5 class="text-center font-weight-bold mb-4">Daily Report</h5>
+      <table id="table2" class="table table-bordered table-striped mb-0" cellspacing="0" width="100%">
+      <thead>
+      <tr>
+      <th>Date</th>
+      <th>Time</th>	 
+      <th>Name</th>
+      <th>IP Address</th>
+      <th>Temperature</th>        
+      <th>Humidity</th>
+      <th>Status</th>
+      </tr>
+      </thead>
+      <tbody id="data_labs2"></tbody>
+      </table>
+      <input id="pickdate1" name="date1" type="text">
+      <a href="javascript:NewCal('pickdate1','yyyymmdd',true,24)">
+      <img src="js/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+      </input>to
+      <input id="pickdate2" name="date2" type="text">
+      <a href="javascript:NewCal('pickdate2','yyyymmdd',true,24)">
+      <img src="js/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+      </input>
+      </div>
+      <div id="rtc_js" class="card light-blue lighten-1 text-center white-text"></div>
+</body>
+
+</html>
+
